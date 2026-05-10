@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1220;
+    color: #e2e8f0;
+    transition: 0.3s;
+}
+
+header {
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #0f172a, #111827);
+	border-bottom: 1px solid rgba(180, 107, 207, 0.2);
+    animation: fadeDown 1s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 38px;
+	font-weight: 700;
+    letter-spacing: 1px;
+    color: #e2e8f0;
+}
+
+header p {
+	margin-top: 10px;
+    color: #b46bcf;
+	font-size: 24px;
+    font-weight: 500;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 30px 0;
+}
+
+section {
+    background: #111827;
+    margin-bottom: 20px;
+    padding: 22px;
+    border-radius: 14px;
+	border: 1px solid rgba(180, 107, 207, 0.08);
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+    animation: fadeUp 1s ease;
+    transition: transform 0.3s;
+}
+
+section {
+    animation: fadeUp 0.8s ease;
+}
+
+section:hover {
+    transform: translateY(-4px);
+	border-color: rgba(180, 107, 207, 0.25);
+}
+
+h2 {
+    border-left: 4px solid #e2e8f0;
+    padding-left: 10px;
+	color: #e2e8f0;
+}
+
+.skills span {
+    display: inline-block;
+	background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 1px solid rgba(180, 107, 207, 0.3);
+    color: #b46bcf;
+    padding: 6px 12px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: 0.25s;
+}
+
+.element {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 3px solid #b46bcf;
+}
+
+.view-link {
+    color: #b46bcf;
+    text-decoration: none;
+}
+
+.view-link:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 45%;
+	border-radius: 10px;
+    border: 2px solid rgba(180, 107, 207, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #b46bcf;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0f172a;
+    color: #94a3b8;
+	border-top: 1px solid rgba(180, 107, 207, 0.2);
+}
+
+@keyframes fadeUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeDown {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@media (max-width: 768px) {
+    header h1 {font-size: 28px;}
+    .container {width: 92%;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Bushra Almodifer</h1>
+    <p>AI & Data Science</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+			I am a Computer Science graduate from <a href="https://www.taibahu.edu.sa/" target="_blank" style="color:#b46bcf; text-decoration:none;">Taibah University</a>, with a strong interest in Artificial Intelligence and Data Science. 
+			I enjoy transforming data into meaningful insights and building intelligent systems that solve real-world problems. 
+			I continuously develop my skills through hands-on projects, bootcamps, and self-learning.
+        </p>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills">
+            <span>Python</span>
+			<span>Java</span>
+			<span>JavaFX</span>
+			<span>JavaScript</span>
+            <span>SQL</span>
+            <span>Machine Learning</span>
+			<span>Deep Learning</span>
+            <span>Data Analysis</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <div class="element">
+            <h3>Image Classification Model</h3>
+            <p>ML model to classify images using Python & Scikit-learn.</p>
+			<a href="#" class="view-link">
+				View Project ↗
+			</a>
+        </div>
+
+        <div class="element">
+            <h3>Data Analysis Dashboard</h3>
+            <p>Data insights visualization using Pandas & Matplotlib.</p>
+            <a href="#" class="view-link">
+				View Project ↗
+			</a>
+        </div>
+    </section>
+
+    <section>
+        <h2>Certifications</h2>
+        <p>HCIA-AI V3 - Huawei (Aug 2023)
+				<a href="#" class="view-link"
+				   onclick="openModal('cert1.jpg'); return false;">
+				   View Certificate ↗
+				</a>
+		</p>
+        <p>Project-Based Learning Programme in Artificial Intelligence - IBM SkillsBuild (Aug 2024)
+            <a href="#" class="view-link"
+			   onclick="openModal('cert2.jpg'); return false;">
+			    View Certificate ↗
+			</a>
+		</p>
+		<p>UI-UX Design Bootcamp - NYWTK (Oct 2024)
+            <a href="#" class="view-link"
+			   onclick="openModal('cert3.jpg'); return false;">
+			    View Certificate ↗
+			</a>
+		</p>
+		<p>Data Analysis Bootcamp - NYWTK (Mar 2025)
+            <a href="#" class="view-link"
+			   onclick="openModal('cert4.jpg'); return false;">
+			    View Certificate ↗
+			</a>
+		</p>
+		<p>AI Bootcamp - NYWTK (May 2025)
+            <a href="#" class="view-link"
+			   onclick="openModal('cert5.jpg'); return false;">
+			   View Certificate ↗
+			</a>
+		</p>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+		<p>Email: 
+        <a href="mailto:bushrakhaleel248@gmail.com">bushrakhaleel248@gmail.com</a>
+		</p>
+        <p>GitHub: 
+        <a href="https://github.com/yourname" target="_blank">github.com/yourname</a>
+		</p>
+		<p>LinkedIn: 
+        <a href="https://linkedin.com/in/yourname" target="_blank">linkedin.com/in/yourname</a>
+		</p>
+    </section>
+</div>
+	
+<div id="modal" class="modal" onclick="closeModal(event)">
+    <span class="close" onclick="closeModal(event)">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+function openModal(imageSrc) {
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("modalImg").src = imageSrc;
+}
+function closeModal(event) {
+    const modal = document.getElementById("modal");
+    if (event.target === modal || event.target.className === "close") {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<footer>
+    © 2026 Bushra
+</footer>
+
+</body>
+</html>
